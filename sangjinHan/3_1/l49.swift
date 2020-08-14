@@ -1,7 +1,15 @@
-var inputStr: [String] = ["eat", "tea", "tan", "ate", "nat", "bat"]
+//49. Group Anagrams
+//[["bat"], ["eat", "tea", "ate"], ["tan", "nat"]]
 
-var dict = [String : Int]()
+var strs: [String] = ["eat", "tea", "tan", "ate", "nat", "bat"]
 
+var dict = [String : [String]]()
+
+for str in strs{
+	dict[String(str.sorted()), default : []].append(str)
+}
+
+return Array(dict.values)
 
 /* 시간초과
 var answerStr = [[String]]()
@@ -31,9 +39,27 @@ for i in 0..<inputStr.count{
 }
 */
 
-/* 한줄짜리 정답코드 
-return Array(Dictionary(grouping: strs) { $0.sorted() }.values)
+/*빠르고 메모리 적은 코드
+var result = [[String]]()
+var dict = [String:[String]]()
+for i in 0..<strs.count {
+    let word = String(strs[i].sorted())
+    if let _ = dict[word] {
+        dict[word]!.append(strs[i])
+    }
+    else {
+        dict[word] = [strs[i]]
+    }
+}
+for value in dict.values {
+    result.append(value)
+}
+return result
 */
+
+/* 한줄짜리 정답코드 */
+//return Array(Dictionary(grouping: strs) { $0.sorted() }.values)
+
 
 /* Using HashMap 
 var map = [String: [String]]()
