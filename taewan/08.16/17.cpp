@@ -8,11 +8,11 @@ public:
     vector<string> answer;    
     
     void recursive(string str, string digits, int depth) {
-        if(depth == digits.length()) {
+        if(depth == digits.length()) {      //문자열의 끝에 도달하면 answer에 push해주기
             if(str != "") answer.push_back(str);
             return ;
         }
-        switch(digits[depth]) {
+        switch(digits[depth]) {     //한 단어씩 더하면서 재귀를 돌린다.
             case '2':
                 recursive(str + 'a', digits, depth + 1);
                 recursive(str + 'b', digits, depth + 1);
