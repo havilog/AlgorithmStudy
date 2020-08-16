@@ -1,0 +1,45 @@
+class Solution {
+public:
+    vector<vector<string>> answer;
+    int size;
+    int* chk;
+    bool promising(int row){
+        for (int i=0; i<row; i++){
+            if(chk[i] == chk[row] ||  abs(chk[row]-chk[i]) == row-i){
+                return false;
+            }
+        }
+        return true;
+    }
+    
+    void solve(int row){
+        if (row == size){
+            vector<string> vecTmp;
+            for (int i=0; i<size; i++){
+                string tmp ="";
+                for (int j=0; j<size; j++)
+                    tmp += ".";
+                tmp[chk[i]] = 'Q';
+                vecTmp.push_back(tmp);
+            }
+            answer.push_back(vecTmp);
+        }
+        else{
+            for (int i=0; i<size; i++){
+                chk[row] = i;
+                if(promising(row)){
+                    solve(row+1);
+                }
+            }
+        }
+    }
+    
+    vector<vector<string>> solveNQueens(int n) {
+        size = n;
+        chk = new int[size];
+        solve(0);
+        return answer;
+    }
+};
+
+
