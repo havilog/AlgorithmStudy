@@ -6,7 +6,7 @@ public:
     vector<vector<int>> answer;
     bool visit[21] = { false, };
     int N, k;
-    void recursive(int idx, int cnt) {
+    void recursive(int idx, int cnt) {  //N개 중 k개 뽑기
         if(cnt == k) {
             vector<int> temp;
             for(int i = 1; i <= N; i++) 
