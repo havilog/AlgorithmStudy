@@ -1,0 +1,42 @@
+class Solution {
+public:
+    vector<vector<int>> answer;
+    vector<int> tmp;
+    int limit;
+    int cnt;
+    void solve(int n){
+        if(tmp.size()==cnt){
+            answer.push_back(tmp);
+        } 
+        else{
+            for(int i=n+1; i<=limit-cnt+tmp.size()+1; i++){
+                tmp.push_back(i);
+                solve(i);
+                tmp.pop_back();
+            }
+        }
+        
+        
+    }
+    
+    vector<vector<int>> combine(int n, int k) {
+        limit = n;
+        cnt = k;
+        for(int i=1; i<=n-k+1; i++){
+            tmp.push_back(i);
+            solve(i);
+            tmp.pop_back();
+        }
+        return answer;
+    }
+};
+
+
+/*
+1부터 시작 n-k까지 
+
+
+벡터의 개수가 k개가 됐을 때 리턴
+
+
+*/
