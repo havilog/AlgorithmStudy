@@ -1,0 +1,38 @@
+class Solution {
+public:
+    vector<vector<int>> answer;
+    vector<int> candi;
+    vector<int> tmp;
+    int limit;
+    int now = 0;
+    
+    void solve(int n){
+        if(now==limit){
+            answer.push_back(tmp);
+            return;
+        }
+        cout << "CHK" << n << '\n';
+        for(int i=n; i<candi.size();i++){
+            if(now+candi[i] <= limit){
+                now += candi[i];
+                tmp.push_back(candi[i]);
+                cout << "chk" << i << '\n';
+                solve(i);
+                tmp.pop_back();
+                now -= candi[i];
+            }
+        }
+    }
+    
+    vector<vector<int>> combinationSum(vector<int>& candidates, int target) {        
+        limit = target;
+        candi = candidates;
+        
+        for(int i=0; i<candi.size(); i++){
+            solve(i);
+        }
+        sort(answer.begin(), answer.end());
+        answer.erase(unique(answer.begin(),answer.end()),answer.end());
+        return answer;
+    }
+};
