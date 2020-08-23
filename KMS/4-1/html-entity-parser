@@ -1,0 +1,32 @@
+class Solution {
+public:
+    string entityParser(string text) {
+        string answer = "";
+        int len = text.size();
+        int idx = 0;
+        while(idx < len){
+            if(text[idx] == '&'){
+                int tmp = idx + 1;
+                while(text[tmp]!=';') tmp++;
+                string entity = text.substr(idx, tmp - idx + 1);
+                if (entity == "&quot;") answer += "\"";
+                else if (entity == "&apos;") answer += "\'";
+                else if (entity == "&amp;") answer += "&";
+                else if (entity == "&gt;") answer += ">";
+                else if (entity == "&lt;") answer += "<";
+                else if (entity == "&frasl;") answer += "/";
+                else {
+                    answer += entity;
+                }
+                
+                idx = ++tmp;
+            }
+            else{
+                answer+=text[idx];
+                idx++;
+            }
+        }
+        
+        return answer;
+    }
+};
