@@ -1,3 +1,8 @@
+#include<iostream>
+#include<stack>
+#include<string>
+#include<map>
+using namespace std;
 class Solution {
 public:
     string countOfAtoms(string formula) {
@@ -71,3 +76,6 @@ public:
         return atoi(f.c_str());
     }
 };
+int main(void){
+    return 0;
+}
