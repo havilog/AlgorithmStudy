@@ -1,0 +1,17 @@
+class Solution {
+public:
+    int firstUniqChar(string s) {
+        char tmp;
+        if (s == "") return -1;
+        if (s.size()==1) return 0;
+        for(int i=0; i<s.size(); i++){
+            tmp = s[i];
+            s[i] = '0';
+            if (s.find(tmp) == string::npos){
+                return i;
+            }
+            s[i] = tmp;
+        }
+        return -1;
+    }
+};
