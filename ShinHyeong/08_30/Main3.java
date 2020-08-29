@@ -10,9 +10,7 @@ class Solution {
     		}
     	}
     	Collections.sort(list);
-    	System.out.println(list);
-    	System.out.println(list.get(k-1));
-        return 0;
+        return list.get(k-1);
     }
 }
 public class Main3 {
@@ -21,7 +19,6 @@ public class Main3 {
 		// TODO Auto-generated method stub
 		Solution s = new Solution();
 		int[][] matrix = {{ 1,  5,  9},{10, 11, 13},{12, 13, 15}};
-		//int[][] matrix1 = {{ 1, 5,9,18},{10, 11, 13,19},{12, 13, 15,20},{12, 13, 15,20}};
 		s.kthSmallest(matrix, 8);
 
 	}
