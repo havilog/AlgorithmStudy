@@ -8,9 +8,7 @@ class Solution2 {
     		numlist.add(nums[i]);
     	}
     	Collections.sort(numlist);
-    	System.out.println(numlist.get(numlist.size()-k));
-    	
-    	return 0;
+    	return numlist.get(numlist.size()-k);
     }
 }
 public class Main2 {
@@ -21,7 +19,6 @@ public class Main2 {
 		int[] num = {3,2,1,5,6,4};
 		int[] num1 = {};
 		s.findKthLargest(num1, 4);
-		//System.out.println(s.findKthLargest(num, 2));
 
 	}
 
