@@ -10,7 +10,7 @@
 ## Online Judge
 - Leetcode
 
-# Curriculum
+## Curriculum
 ```
 시간 복잡도
 공간 복잡도
