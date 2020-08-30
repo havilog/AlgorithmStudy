@@ -4,7 +4,7 @@
 - 2020.07.29 ~
 
 ## Place
-- 강남역 허슬버슬 스터디 카페
+- 강남역 허슬버슬 스터디 카페 (코로나 2단계 격상으로 인한 온라인 대체)
 - 수요일 7시, 일요일 6시
 
 ## Rules
@@ -13,8 +13,9 @@
 - 지각 10분당 1,000원, Max 5천원
 - 무단결석 10,000원
 
-## Online Judge
-- Leetcode
+## Tools
+- Online Judge : Leetcode
+- Team tools : Google Meeting, Github, Kakaotalk
 
 ## Curriculum
 ```
