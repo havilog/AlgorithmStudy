@@ -15,7 +15,7 @@
 
 ## Tools
 - Online Judge : Leetcode
-- Team tools : Google Meeting, Github, Kakaotalk
+- Communication : Google Meeting, Github, Kakaotalk
 
 ## Curriculum
 ```
