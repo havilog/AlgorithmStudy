@@ -1,0 +1,21 @@
+#include <string>
+#include <vector>
+
+using namespace std;
+
+vector<int> solution(vector<int> progresses, vector<int> speeds) {
+    vector<int> answer;
+    int min = 100, day = 0, cnt = 1; 
+    while(progresses[0] + speeds[0] * day < 100) day++;
+
+    for (int i=1; i<progresses.size(); i++){
+        if (progresses[i] + speeds[i] * day >= 100) cnt++;
+        else{
+            answer.push_back(cnt);
+            cnt = 1;
+            while(progresses[i] + speeds[i] * day < 100) day++;
+        }
+        if( i== progresses.size()-1)  answer.push_back(cnt);
+    }
+    return answer;
+}
