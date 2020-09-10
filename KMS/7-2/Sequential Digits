@@ -1,0 +1,25 @@
+class Solution {
+public:
+    vector<int> sequentialDigits(int low, int high) {
+        vector<int> answer;
+        int l = low, h = high;
+        string num = "123456789";
+        int lDigit=0, hDigit=0;
+        while (h){
+            h /= 10;
+            hDigit++;
+        } // high 자릿수 구하기
+        while (l){
+            l /= 10;
+            lDigit++;
+        } // low 자릿수 구하기
+        for (int i=lDigit; i<=hDigit; i++){
+            for(int j=0; j<10-i; j++){
+                int tmp = stoi(num.substr(j,i));
+                if(low <= tmp && tmp <= high)
+                    answer.push_back(tmp);
+            }
+        }
+        return answer;
+    }
+};
