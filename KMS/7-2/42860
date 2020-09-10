@@ -1,0 +1,33 @@
+#include <string>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+int solution(string name) {
+    int answer = 0, cnt = 0, size = name.size();
+    vector<int> vec; 
+    for (int i=0; i<size; i++){
+        answer += 13-(abs('N'-name[i]));
+        if(name[i]!='A'){
+            cnt++;
+            vec.push_back(i);
+            vec.push_back(i+size);
+        }
+    }
+    sort(vec.begin(), vec.end());
+    int center = size, min = 100, tmp;
+    for(int i=0; i<vec.size()-cnt; i++){
+        if(vec[i+cnt-1] < center)
+            tmp = center - vec[i];
+        else
+            if(vec[i+cnt-1]-center>center-vec[i])
+                tmp = (center-vec[i])*2+(vec[i+cnt-1]-center);
+            else
+                tmp = (vec[i+cnt-1]-center)*2+(center-vec[i]);
+        if (min > tmp)
+            min = tmp;
+    }
+    
+    return answer + min;
+}
