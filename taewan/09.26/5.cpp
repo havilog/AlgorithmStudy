@@ -1,3 +1,4 @@
+// 삼각 달팽이
 #include <iostream>
 #include <string>
 #include <vector>
