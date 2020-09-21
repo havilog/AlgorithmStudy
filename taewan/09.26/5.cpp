@@ -77,9 +77,9 @@ vector<int> solution(int n)
 
   while (cnt < result)
   {
-    goDown(vec, y, x, cnt, result);
-    goRight(vec, y, x, cnt, result);
-    goDiagonal(vec, y, x, cnt, result);
+    goDown(vec, y, x, cnt);
+    goRight(vec, y, x, cnt);
+    goDiagonal(vec, y, x, cnt);
   }
 
   for (int i = 0; i < n; i++)
