@@ -13,7 +13,7 @@ vector<vector<int>> reset(int n)
   return vec;
 }
 
-void goDown(vector<vector<int>> &vec, int &y, int &x, int &cnt, int result)
+void goDown(vector<vector<int>> &vec, int &y, int &x, int &cnt)
 {
   while (1)
   {
@@ -24,7 +24,7 @@ void goDown(vector<vector<int>> &vec, int &y, int &x, int &cnt, int result)
   }
 }
 
-void goRight(vector<vector<int>> &vec, int &y, int &x, int &cnt, int result)
+void goRight(vector<vector<int>> &vec, int &y, int &x, int &cnt)
 {
   while (1)
   {
@@ -35,7 +35,7 @@ void goRight(vector<vector<int>> &vec, int &y, int &x, int &cnt, int result)
   }
 }
 
-void goDiagonal(vector<vector<int>> &vec, int &y, int &x, int &cnt, int result)
+void goDiagonal(vector<vector<int>> &vec, int &y, int &x, int &cnt)
 {
   while (1)
   {
