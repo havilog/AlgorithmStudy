@@ -1,0 +1,44 @@
+#include <string>
+#include <vector>
+#include <algorithm>
+#include <iostream>
+using namespace std;
+
+vector<string> wordList;
+vector<string> used;
+string tgt;
+int cnt = 0;
+int minimum = 51;
+int compare(string a, string b){
+    int diff = 0;
+    for(int i=0; i<a.size(); i++)
+       if(a[i] != b[i]) diff++;
+    return diff;
+}
+void dfs(string str){        
+    if(cnt > wordList.size()) return;
+    if(str==tgt){
+        if(minimum > cnt)
+            minimum = cnt;
+        return;
+    }
+    for(string word : wordList){
+        if(find(used.begin(), used.end(), word) != used.end()) continue;
+        if(compare(word, str)==1){
+            used.push_back(word);
+            cnt++;
+            dfs(word);
+            cnt--;
+            used.pop_back();
+        }
+    }
+}
+int solution(string begin, string target, vector<string> words) {
+    int answer = 0;
+    if(find(words.begin(),words.end(),target) == words.end()) return 0;
+    wordList = words; // words 추가 
+    tgt = target; // target 추가
+    dfs(begin);
+    answer = minimum;
+    return answer;
+}
