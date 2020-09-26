@@ -1,0 +1,41 @@
+#include <string>
+#include <vector>
+
+using namespace std;
+
+vector<int> solution(int n) {
+    vector<int> answer;
+    int arr[n][n];
+    int x = 0, y = 0, num = 1;
+    char dir[3] = {'d', 'r', 'u'};
+    char now = 'd';
+    for(int i = 0; i < n; i++){
+        if(now == 'd'){
+            for(int j = i; j < n; j++)
+                arr[x++][y] = num++;
+            x--;
+            y++;
+            now = 'r';
+        }
+        else if(now == 'r'){
+            for(int j = i; j < n; j++)
+                arr[x][y++] = num++;
+            x--;
+            y -= 2;
+            now = 'u';
+        }
+        else if(now == 'u'){
+            for(int j = i; j < n; j++)
+                arr[x--][y--] = num++;
+            x += 2;
+            y++;
+            now = 'd';
+        }
+    }
+    
+    for(int i = 0; i < n; i++){
+        for(int j = 0; j <= i; j++)
+            answer.push_back(arr[i][j]);
+    }
+    return answer;
+}
