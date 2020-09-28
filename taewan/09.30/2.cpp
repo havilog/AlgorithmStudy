@@ -1,4 +1,10 @@
 //야근 지수
+/*
+    야근 지수가 가장 작으려면?
+    => 배열에 있는 값들을 모두 최소로 만들어줘야 한다.
+    priority_queue를 내림차순으로 만든다.
+    queue의 top에 있는 것들을 1씩 빼주는 방식으로 n번 진행
+*/
 #include <iostream>
 #include <string>
 #include <vector>
