@@ -1,0 +1,26 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int solution(int n, vector<int> stations, int w)
+{
+    int answer = 0;
+    int tmp = 0;
+    for (int i=1; i<=n;){
+        if(stations[tmp]-w <= i && stations[tmp]+w >= i){
+            i = stations[tmp] + w + 1 ;
+            tmp++; 
+        }
+        else{
+            answer++;
+            i += 2 * w + 1;
+        }
+    }
+    return answer;
+}
+
+/*
+도달거리 W
+2W+1 만큼 커버 가능 
+
+*/
