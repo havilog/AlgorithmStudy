@@ -1,0 +1,36 @@
+#include <string>
+#include <vector>
+#include <iostream>
+#include <map>
+#include <algorithm>
+using namespace std;
+
+vector<int> solution(string s) {
+    vector<int> answer, tmp;
+    int cnt = 0;
+    bool isNum = false;
+    unordered_map<int,int> um; 
+    string num = "";
+    for(char c : s){
+        if (c <= '9' && c >= '0'){
+            num += c;
+            isNum = true;
+        }
+        else{
+            if(isNum){
+                um[stoi(num)]++;
+                tmp.push_back(stoi(num));
+                num = "";
+                isNum = false;
+            }
+        }
+    }
+    sort(tmp.begin(), tmp.end());
+    tmp.erase(unique(tmp.begin(), tmp.end()), tmp.end());
+    answer.assign(tmp.size(), 0);
+    for(int i=0; i<tmp.size(); i++){
+        int t = um[tmp[i]];
+        answer[tmp.size()-t] = tmp[i];
+    }
+    return answer;
+}
