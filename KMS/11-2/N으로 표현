@@ -1,0 +1,24 @@
+def solution(N, number):
+    answer = 0
+    numArray = []
+    for i in range(1,9):
+        num = set()
+        num.add(int(str(N)*i))
+        for j in range(0, i-1):
+            for a in numArray[j]:
+                for b in numArray[i-j-2]:
+                    num.add(a+b)
+                    num.add(a-b)
+                    num.add(a*b)
+                    if b!=0 : num.add(a//b)
+        if number in num:
+            answer = i
+            break
+        numArray.append(num)
+    if answer == 0 : answer = -1
+    return answer
+
+# 배열 > 8개 원소 > 각각 원소에 set()
+# 5 55 555 5555 55555 555555 55555555 
+# 만들 수 있는 수 
+# 이어붙이기, 더하기, 빼기, 나누기, 곱하기  >> 5가지
