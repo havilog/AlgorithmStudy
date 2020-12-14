@@ -18,10 +18,10 @@
 - Communication : Google Meet, Github, Kakaotalk
 
 ## Curriculum
-```
+<del>
 시간 복잡도
 공간 복잡도
-
+</del>
 문자열(KMP, 라빈카프)
 
 스택/큐
@@ -50,7 +50,3 @@ BFS/DFS
 - 우선순위 큐와 힙
 - 그래프
 - 최단 경로 알고리즘
-
-
-
-```
