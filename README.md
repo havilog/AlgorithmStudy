@@ -18,10 +18,13 @@
 - Communication : Google Meet, Github, Kakaotalk
 
 ## Curriculum
+
 <del>
 시간 복잡도
+  
 공간 복잡도
 </del>
+
 문자열(KMP, 라빈카프)
 
 스택/큐
